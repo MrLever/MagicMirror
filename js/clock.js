@@ -6,7 +6,7 @@ function startClock() {
     h = checkHours(h);
 	m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('txt').innerHTML =
+    document.getElementById('clock').innerHTML =
     h + ":" + m + ":" + s;
     var t = setTimeout(startClock, 500);
 }
