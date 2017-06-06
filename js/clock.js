@@ -1,4 +1,4 @@
-function startClock() {
+function clock() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -8,7 +8,7 @@ function startClock() {
     s = checkTime(s);
     document.getElementById('clock').innerHTML =
     h + ":" + m + ":" + s;
-    var t = setTimeout(startClock, 500);
+    var t = setTimeout(clock, 500);
 }
 function checkHours(i){
 	if (i > 10) {i = i % 12};  // add zero in front of numbers < 10
