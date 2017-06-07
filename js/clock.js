@@ -1,4 +1,4 @@
-function clock() {
+function main() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
@@ -8,7 +8,7 @@ function clock() {
     s = checkTime(s);
     document.getElementById('clock').innerHTML =
     h + ":" + m + ":" + s;
-    var t = setTimeout(clock, 500);
+    var t = setTimeout(main, 500);
 }
 function checkHours(i){
 	if (i > 10) {i = i % 12};  // add zero in front of numbers < 10
@@ -18,3 +18,4 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+var myfunc = {clock: clock};
