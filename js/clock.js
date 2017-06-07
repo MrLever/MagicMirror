@@ -1,3 +1,4 @@
+var loc = "BC";
 function startClock() {
     var today = new Date();
     /* Time */
@@ -16,7 +17,7 @@ function startClock() {
 	h = checkHours(h);
 	m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('BC').innerHTML =
+    document.getElementById(loc).innerHTML =
     "<div class='clock'> <span class='time'>" + h + ":" + m + ":" + s + "</span> <span class='day'>" + day + "</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
     var t = setTimeout(startClock, 500);
 }

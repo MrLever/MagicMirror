@@ -53,10 +53,6 @@ table {
   src: url('fonts/steelfish_rg.ttf')  format('truetype');
 }
 @font-face {
-  font-family: 'Steelfish_out';
-  src: url('fonts/steelfish_outline.ttf')  format('truetype');
-}
-@font-face {
   font-family: 'Ombres';
   src: url('fonts/la_Compagnie_des_Ombres.ttf')  format('truetype');
 }
