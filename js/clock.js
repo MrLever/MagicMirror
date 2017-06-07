@@ -19,7 +19,7 @@ var loc = "BC";
     s = checkTime(s);
     document.getElementById(loc).innerHTML =
     "<div class='clock'> <span class='time'>" + h + ":" + m + ":" + s + "</span> <span class='day'>" + day + "</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
-    var t = setTimeout(startClock, 500);
+    var t = setTimeout(main, 500);
 }
 function resolveMonth(i){
 	switch(i){
@@ -94,4 +94,3 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
-var myfunc = {clock: clock};
