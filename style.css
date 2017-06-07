@@ -71,11 +71,24 @@ table {
 .bottom{
 	bottom: 0;
 }
+.top{
+	top: 0;
+}
 .center{
 	width: 750px;
 	height: 400px;
 	left: 50%;
 	margin-left: -375px; /*Half of width of bottom container to remain centered.*/
+}
+.left{
+	width: 500px;
+	height: 400px;
+	left: 0;
+}
+.right{
+	width: 500px;
+	height: 400px;
+	right: 0;
 }
 
 /* BEGIN CLOCK STYLE RULES */
@@ -111,3 +124,25 @@ table {
 	text-align: center;
 }
 /* END CLOCK STYLE RULES */
+
+/* BEGIN FEED STYLE RULES */
+.rssWrapper{
+	margin: 20px;
+}
+.rssFeed{
+
+
+}
+.rssTitle{
+	display: block;
+	padding-bottom: 2px;
+	margin-bottom: 5px;
+	font-family: "Steelfish", sans-serif;
+	font-size: 22pt;
+	color: #CF112B;
+	border-bottom: 2px solid #333333;
+}
+.rssAbstract{
+	font-size: 14pt;
+}
+/* END FEED STYLE RULES */

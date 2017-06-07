@@ -9,7 +9,7 @@ function initialload(){
 		imported.src = '/js/'.concat(window.CONFIG.scripts[i]).concat('.js');
 		console.log('/js/'.concat(window.CONFIG.scripts[i]).concat('.js'));
 		imported.onload = function () {
-			main();
+			/* main(); */
 		};
 		document.head.appendChild(imported);
 	}
