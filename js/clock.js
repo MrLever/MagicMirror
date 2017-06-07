@@ -1,5 +1,5 @@
+function main() {
 var loc = "BC";
-function startClock() {
     var today = new Date();
     /* Time */
 	var h = today.getHours();
@@ -94,3 +94,4 @@ function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
+var myfunc = {clock: clock};
