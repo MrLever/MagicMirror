@@ -1,5 +1,6 @@
-function main() {
-var loc = "BC";
+function main( ) {
+	console.log("Tick");
+	var loc = "BC";
     var today = new Date();
     /* Time */
 	var h = today.getHours();
