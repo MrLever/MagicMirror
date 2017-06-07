@@ -7,10 +7,10 @@ function initialload(){
 	for(i = 0;i < CONFIG.scripts.length;i++){
 		var imported = document.createElement('script');
 		imported.src = '/js/'.concat(window.CONFIG.scripts[i]).concat('.js');
-		console.log('/js/'.concat(window.CONFIG.scripts[i]).concat('.js'));
 		imported.onload = function () {
-			main();
+			console.log("loaded script");
 		};
+		console.log('/js/'.concat(window.CONFIG.scripts[i]).concat('.js'));
 		document.head.appendChild(imported);
 	}
 }
