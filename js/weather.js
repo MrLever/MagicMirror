@@ -2,7 +2,7 @@ weather();
 function weather(){
 	jQuery.get('/keys/weather.key', function(data){
 		console.log('tick');
-		CONTENT = fetchFeed("http://api.openweathermap.org/data/2.5/weather?zip=34698,us&mode=xml&appid="+data);
+		CONTENT = fetchFeed("http://samples.openweathermap.org/data/2.5/weather?q=Dunedin,us&mode=xml&appid="+data);
 		console.log(CONTENT);
 		check = $(CONTENT).length;
 		console.log(check)
