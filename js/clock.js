@@ -91,7 +91,7 @@ function checkHours(i){
 		i = 12;
 	} else if (i > 10){ // add zero in front of numbers < 10
 		i = i % 12
-	}  
+	}
     return i;
 }
 function checkTime(i) {
