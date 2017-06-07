@@ -3,30 +3,27 @@
 		<title>Magic Mirror</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 		<script>
+		var CONFIG;
 			function initialload(){
 				var request = new XMLHttpRequest();
 				request.open("GET", "./config.json", false);
 				request.send(null)
-				var CONFIG = JSON.parse(request.responseText);
+				window.CONFIG = JSON.parse(request.responseText);
 				for(i = 0;i < CONFIG.scripts.length;i++){
 					var imported = document.createElement('script');
-					imported.src = './js/'.concat(CONFIG.scripts[i]).concat('.js');
-					console.log('./js/'.concat(CONFIG.scripts[i]).concat('.js'));
+					imported.src = './js/'.concat(window.CONFIG.scripts[i]).concat('.js');
+					console.log('./js/'.concat(window.CONFIG.scripts[i]).concat('.js'));
+					imported.onload = function () {
+						main();
+					};
 					document.head.appendChild(imported);
 				}
-				/*for(i = 0;i < CONFIG.scripts.length;i++){
-					var a = CONFIG.scripts[i];
-					console.log(a);
-					alert();
-					window["clock"]();
-				}*/
 			}
 		</script>
 		<script>
-			window.clock();
 		</script>
 	</head>
-	<body onload="clock()">
+	<body onload="initialload()">
 		<div class="content">
 			<!-- Top left, pulls next 4(?) google calendar entries and displays them.
 			Apply a fade as the entries go down the list.
