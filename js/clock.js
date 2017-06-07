@@ -1,4 +1,5 @@
-function main( ) {
+clock();
+function clock(){
 	console.log("Tick");
 	var loc = "BC";
     var today = new Date();
@@ -18,7 +19,7 @@ function main( ) {
 	m = checkTime(m);
     document.getElementById(loc).innerHTML =
     "<div class='clock'> <span class='time'>" + h + ":" + m + "</span> <span class='day'>" + day + "</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
-    var t = setTimeout(main, 1000);
+    var t = setTimeout(clock, 1000);
 }
 function resolveMonth(i){
 	switch(i){
