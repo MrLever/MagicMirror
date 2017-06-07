@@ -4,8 +4,7 @@ var loc = "BC";
     /* Time */
 	var h = today.getHours();
     var m = today.getMinutes();
-    var s = today.getSeconds();
-	/* Date */
+    /* Date */
 	var d = today.getDay();
 	var day = resolveDay(d);
 	var date = today.getDate();
@@ -16,9 +15,8 @@ var loc = "BC";
 
 	h = checkHours(h);
 	m = checkTime(m);
-    s = checkTime(s);
     document.getElementById(loc).innerHTML =
-    "<div class='clock'> <span class='time'>" + h + ":" + m + ":" + s + "</span> <span class='day'>" + day + "</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
+    "<div class='clock'> <span class='time'>" + h + ":" + m + "</span> <span class='day'>" + day + "</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
     var t = setTimeout(main, 500);
 }
 function resolveMonth(i){
