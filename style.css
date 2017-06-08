@@ -56,7 +56,6 @@ table {
   font-family: 'Ombres';
   src: url('fonts/la_Compagnie_des_Ombres.ttf')  format('truetype');
 }
-
 .content{
 	position: relative;
 	color: #FFF;
@@ -130,7 +129,6 @@ table {
 	margin: 20px;
 }
 .rssFeed{
-
 
 }
 .rssTitle{
