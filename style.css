@@ -143,6 +143,9 @@ table {
 	border-bottom: 2px solid #333333;
 }
 .rssAbstract{
+	display: block;
+	width: 100%;
 	font-size: 14pt;
+	text-align: justify;
 }
 /* END FEED STYLE RULES */

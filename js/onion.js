@@ -10,9 +10,12 @@ String.prototype.trunc =
       };
 
 function onion(){
+	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml",onionprocess);
+}
+function onionprocess(data){
 	var loc = "TL";
-	var content = fetchFeed("http://www.theonion.com/feeds/rss");
-	console.log(content);
+	content = data.results[0];
+	//console.log(content);
 
 	//Pull Feed titles
 	var feedTitles = $(content).find("title");
@@ -25,6 +28,7 @@ function onion(){
 	//Check if loaded properly.
 	if(feedTitles.length == 0){
 		//Put loading icon.
+		console.log("fail");
 		setTimeout(onion, 500);
 	}
 

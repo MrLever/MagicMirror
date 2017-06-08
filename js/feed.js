@@ -1,21 +1,25 @@
-//Returns XML content from requested url.
-function fetchFeed(source){
-	console.log("Loading XML");
-	var xmlSource = source;
-	var xmlContent;
-	
-	// build the yql query. Could be just a string - I think join makes easier reading. YQL is a yahoo api
+var feednew = function(yqlURL,Format,callback)
+{
+	$.ajax({
+		url: yqlURL,
+		type: "GET",
+		dataType: "jsonp",
+		async: false,
+		caceh: false,
+		success: callback,
+		error: function(){
+			console.log("WHHHHHHHHHHYYYYYYYYYYY DO YOU HALF ASS EVERY THING NIC");
+		}
+	});
+};
+function fetchFeed(source,format,callback){
+	console.log("huh");
+	var Source = source;
+	var Format = format;
 	var yqlURL = [
 		"http://query.yahooapis.com/v1/public/yql",
-		"?q=" + encodeURIComponent("select * from xml where url='" + xmlSource + "'"),
-		"&format=xml&callback=?"
+		"?q=" + encodeURIComponent("select * from xml where url='" + Source + "'"),
+		"&format="+format+"&callback=?"
 	].join("");
-
-	// Now do the AJAX heavy lifting        
-	$.getJSON(yqlURL, function(data){
-		window.xmlContent = $(data.results[0]);
-		/* var Abstract = $(xmlContent).find("item").text();
-		console.log(Abstract); */ 
-	});
-	return window.xmlContent;
+	feednew(yqlURL,Format,callback);
 }
