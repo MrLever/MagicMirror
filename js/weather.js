@@ -1,13 +1,12 @@
-weather();
+weather()
 function weather(){
 	jQuery.get('/keys/weather.key', function(data){
-		console.log('tick');
-		CONTENT = fetchFeed("http://api.openweathermap.org/data/2.5/weather?q=Dunedin,us&units=imperial&mode=xml&appid="+data,"json");
-		console.log(CONTENT);
-		check = $(CONTENT).length;
-		if(check == 0){//request fails first time
-			setTimeout(weather,1000);
-		}
-		
+		config=$.getJSON("/js/configs/weather.json");
+		//alert(config.city);
+		console.log('RIGHT BEFORE');
+		fetchFeed("http://api.openweathermap.org/data/2.5/weather?q=Dunedin,us&units=imperial&mode=xml&appid="+data,"json",weatherprocess);
 	});
+}
+function weatherprocess(data){
+	console.log(data)
 }
