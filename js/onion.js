@@ -11,7 +11,7 @@ String.prototype.trunc =
 
 function onion(){
 	var loc = "TL";
-	var content = fetchFeed("http://www.theonion.com/feeds/rss");
+	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml");
 	console.log(content);
 
 	//Pull Feed titles
