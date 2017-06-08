@@ -1,5 +1,6 @@
 clock();
 function clock(){
+
 	console.log("Tick");
 	var loc = "BC";
     var today = new Date();
