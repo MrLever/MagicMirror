@@ -13,7 +13,7 @@ var feednew = function(yqlURL,Format,callback)
 	});
 };
 function fetchFeed(source,format,callback){
-	console.log("huh");
+/* 	console.log("huh"); */
 	var Source = source;
 	var Format = format;
 	var yqlURL = [

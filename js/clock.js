@@ -1,3 +1,4 @@
+console.log("---BEGIN CLOCK MODULE");
 clock();
 function clock(){
 	console.log("Tick");
@@ -9,6 +10,7 @@ function clock(){
     /* Date */
 	var d = today.getDay();
 	var day = resolveDay(d);
+	
 	var date = today.getDate();
 	var suffix = resolveDate();
 	var month = today.getMonth();

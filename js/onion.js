@@ -1,4 +1,4 @@
-onion();
+initOnion();
 /* For trucation of abstracts. */
 String.prototype.trunc =
      function( n, useWordBoundary ){
@@ -9,10 +9,11 @@ String.prototype.trunc =
             : subString) + " ...";
       };
 
-function onion(){
-	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml",onionprocess);
+function initOnion(){
+	console.log("--- BEGIN ONION FEED ---");
+	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml",onion);
 }
-function onionprocess(data){
+function onion(data){
 	var loc = "TL";
 	content = data.results[0];
 	//console.log(content);
@@ -27,7 +28,7 @@ function onionprocess(data){
 	var feedDates = $(content).find("pubDate");
 	//Check if loaded properly.
 	if(feedTitles.length == 0){
-		//Put loading icon.
+		//Put loading icon?
 		console.log("fail");
 		setTimeout(onion, 500);
 	}
@@ -42,21 +43,18 @@ function onionprocess(data){
 
 	for(i = 1; i < feedTitles.length; i++){
 		if($(feedAbstracts[i]).text().trim() == "]]>"){
-			continue;
+			continue; //Skip descriptionless articles.
 		}
 
 		feed = feed + ("<div class='list'>" +
 							"<span class='rssTitle'>" + $(feedTitles[i]).text() + "</span>" +
 							"<span class='rssAbstract'>" + $(feedAbstracts[i]).text().trunc(512, true).replace(']]>', '') + "</span>"+
 						"</div>");
-
-
-		//console.log($(feedTitles[i]).text() + "\n");
-		//console.log($(feedAbstracts[i]).text() + "\n");
 	}
 	feed = feed + "</div></div>"
 	$(".rssFeed").append(feed);
 
+	console.log("Start Ticker");
 	$('.rssFeed').easyTicker({
 	direction: 'up',
 	easing: 'swing',
@@ -74,6 +72,6 @@ function onionprocess(data){
 	}
 });
 
-
+	console.log("--- END ONION FEED ---");
 	setTimeout(onion, 100000000);
 }

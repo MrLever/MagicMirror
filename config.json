@@ -1,3 +1,9 @@
 {
-	"scripts":["clock", "onion", "weather"]
+	"modules":["clock", "onion", "weather"],
+	"weather":{
+		"cityID":"4167348",
+		"units":"imperial",
+		"icons":1,
+		"scroll":0
+	}
 }

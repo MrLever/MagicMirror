@@ -4,13 +4,13 @@ function initialload(){
 	request.open("GET", "/config.json", false);
 	request.send(null)
 	window.CONFIG = JSON.parse(request.responseText);
-	for(i = 0;i < CONFIG.scripts.length;i++){
+	for(i = 0;i < CONFIG.modules.length;i++){
 		var imported = document.createElement('script');
-		imported.src = '/js/'.concat(window.CONFIG.scripts[i]).concat('.js');
+		imported.src = '/js/'.concat(window.CONFIG.modules[i]).concat('.js');
 		imported.onload = function () {
-			console.log("loaded script");
+			console.log("--- MODULE ADDED ---" );
 		};
-		console.log('/js/'.concat(window.CONFIG.scripts[i]).concat('.js'));
+		console.log('/js/'.concat(window.CONFIG.modules[i]).concat('.js'));
 		document.head.appendChild(imported);
 	}
 }
