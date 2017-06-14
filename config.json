@@ -4,6 +4,8 @@
 		"cityID":"4167348",
 		"units":"imperial",
 		"icons":1,
+		"mode":0,
 		"scroll":0
-	}
+	},
+	"DEBUG":"1"
 }
