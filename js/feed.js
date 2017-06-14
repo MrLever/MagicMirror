@@ -21,5 +21,7 @@ function fetchFeed(source,format,callback){
 		"?q=" + encodeURIComponent("select * from xml where url='" + Source + "'"),
 		"&format="+format+"&callback=?"
 	].join("");
+	if(SETTINGS.DEBUG == 1)
+		console.log("YQL Query: " + yqlURL);
 	feednew(yqlURL,Format,callback);
 }

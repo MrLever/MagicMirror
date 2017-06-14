@@ -10,7 +10,8 @@ String.prototype.trunc =
       };
 
 function initOnion(){
-	console.log("--- BEGIN ONION FEED ---");
+	if(SETTINGS.DEBUG == 1)
+		console.log("--- BEGIN ONION FEED ---");
 	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml",onion);
 }
 function onion(data){
@@ -29,7 +30,7 @@ function onion(data){
 	//Check if loaded properly.
 	if(feedTitles.length == 0){
 		//Put loading icon?
-		console.log("fail");
+		console.log("--- ERR: FEED NOT LOADED ---");
 		setTimeout(onion, 500);
 	}
 
@@ -54,24 +55,26 @@ function onion(data){
 	feed = feed + "</div></div>"
 	$(".rssFeed").append(feed);
 
-	console.log("Start Ticker");
+	if(SETTINGS.DEBUG == 1)
+		console.log("Start Ticker");
 	$('.rssFeed').easyTicker({
-	direction: 'up',
-	easing: 'swing',
-	speed: 'slow',
-	interval: 15000,
-	height: "auto",
-	visible: 1,
-	mousePause: 1,
-	controls: {
-		up: '',
-		down: '',
-		toggle: '',
-		playText: 'Play',
-		stopText: 'Stop'
-	}
-});
+		direction: 'up',
+		easing: 'swing',
+		speed: 'slow',
+		interval: 15000,
+		height: "auto",
+		visible: 1,
+		mousePause: 1,
+		controls: {
+			up: '',
+			down: '',
+			toggle: '',
+			playText: 'Play',
+			stopText: 'Stop'
+		}
+	});
 
-	console.log("--- END ONION FEED ---");
-	setTimeout(onion, 100000000);
+	if(SETTINGS.DEBUG == 1)
+		console.log("--- END ONION FEED ---");
+	setTimeout(onion, 3.6e6);
 }

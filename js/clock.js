@@ -1,7 +1,9 @@
-console.log("---BEGIN CLOCK MODULE");
+if(SETTINGS.DEBUG == 1)
+	console.log("--- BEGIN CLOCK MODULE ---");
 clock();
 function clock(){
-	console.log("Tick");
+	if(SETTINGS.DEBUG == 1)
+		console.log("Tick");
 	var loc = "BC";
     var today = new Date();
     /* Time */
@@ -10,7 +12,7 @@ function clock(){
     /* Date */
 	var d = today.getDay();
 	var day = resolveDay(d);
-	
+
 	var date = today.getDate();
 	var suffix = resolveDate();
 	var month = today.getMonth();
