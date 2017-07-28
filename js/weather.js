@@ -10,11 +10,11 @@ function initWeather(){
 				console.log("City ID: " + SETTINGS.weather.cityID);
 				console.log("Units: " + SETTINGS.weather.units);
 				console.log("Final call: " + "http://api.openweathermap.org/data/2.5/weather?id=" +
-				SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units + "&mode=json&appid=" + key)
+					SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units + "&mode=json&appid=" + key)
 			}
 			/* Leave mode as XML even when request in json? */
 			fetchFeed("http://api.openweathermap.org/data/2.5/weather?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
-			"&mode=xml&appid=" + key, "json", weather);
+				"&mode=xml&appid=" + key, "json", weather);
 			if(SETTINGS.DEBUG == 1)
 				console.log("- End Weather Init -");
 			/* fetchFeed("http://api.openweathermap.org/data/2.5/weather?q=Dunedin,us&units=imperial&mode=xml&appid="+key,"json",weatherprocess); */
@@ -29,26 +29,32 @@ function weather(data){
 
 	switch(SETTINGS.weather.mode){
 		case 0:
-		/* Minimal MODE: 0*/
-		document.getElementById(loc).innerHTML =
-		"<div class='weatherWrappper'>" +
-			"<span class='city'>" +
-				data.query.results.current.city.name +
-			"</span>" +
-			"<span class='temp'>" +
-				data.query.results.current.temperature.value + "&deg;" +
-			"</span>";
-		break;
-		default:
-		/* Default MODE: 0 */
+			/* Minimal MODE: 0*/
 			document.getElementById(loc).innerHTML =
-			"<div class='weatherWrappper'>" +
+				"<div class='weatherWrappper'>" +
 				"<span class='city'>" +
-					data.query.results.current.city.name +
+				data.query.results.current.city.name +
 				"</span>" +
-			"<span class='temp'>" +
+				"<span class='temp'>" +
 				data.query.results.current.temperature.value + "&deg;" +
-			"</span>";
+				"</span>" +
+				"<span class='img'>" +
+				"<img src=\'" + fetchImage(data.query.results.current.weather.icon) +"\'>" +
+				"</span>";
+			break;
+		default:
+			/* Default MODE: 0 */
+			document.getElementById(loc).innerHTML =
+				"<div class='weatherWrappper'>" +
+				"<span class='city'>" +
+				data.query.results.current.city.name +
+				"</span>" +
+				"<span class='temp'>" +
+				data.query.results.current.temperature.value + "&deg;" +
+				"</span>" +
+				"<span class='img'>" +
+				"<img src=\'" + fetchImage(data.query.results.current.weather.icon) +"\'>" +
+				"</span>";
 	}
 }
 function fetchImage(imgCode, weatherID){
