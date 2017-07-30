@@ -29,32 +29,20 @@ function weather(data){
 
 	switch(SETTINGS.weather.mode){
 		case 0:
-			/* Minimal MODE: 0*/
-			document.getElementById(loc).innerHTML =
-				"<div class='weatherWrappper'>" +
-				"<span class='city'>" +
-				data.query.results.current.city.name +
-				"</span>" +
-				"<span class='temp'>" +
-				data.query.results.current.temperature.value + "&deg;" +
-				"</span>" +
-				"<span class='img'>" +
-				"<img src=\'" + fetchImage(data.query.results.current.weather.icon) +"\'>" +
-				"</span>";
-			break;
 		default:
-			/* Default MODE: 0 */
-			document.getElementById(loc).innerHTML =
-				"<div class='weatherWrappper'>" +
-				"<span class='city'>" +
+		/* Minimal MODE: 0*/
+		document.getElementById(loc).innerHTML =
+		"<div class='weatherWrappper'>" +
+			"<span class='city'>" +
+
 				data.query.results.current.city.name +
 				"</span>" +
 				"<span class='temp'>" +
 				data.query.results.current.temperature.value + "&deg;" +
-				"</span>" +
-				"<span class='img'>" +
-				"<img src=\'" + fetchImage(data.query.results.current.weather.icon) +"\'>" +
-				"</span>";
+
+			"</span>" +
+			"<span class='weatherIco'><img src='" + fetchImage(data.query.results.current.weather.icon) + "'/>";
+
 	}
 }
 function fetchImage(imgCode, weatherID){

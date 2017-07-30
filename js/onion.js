@@ -76,5 +76,5 @@ function onion(data){
 
 	if(SETTINGS.DEBUG == 1)
 		console.log("--- END ONION FEED ---");
-	setTimeout(onion, 3.6e6);
+	setTimeout(initOnion, 3.6e6);
 }
