@@ -43,7 +43,7 @@ function weather(data){
 			 
 			"<div class='tempLine'><span class='temp'>" +
 				"<span class='weatherIco'>" + fetchImage(data.query.results.current.weather.icon) + " </span>" +
-				data.query.results.current.temperature.value + "<span class='weatherSys'>" + system + "</span>" +
+				Math.round(data.query.results.current.temperature.value) + "<span class='weatherSys'>" + system + "</span>" +
 			"</div>" +	
 			"<span class='weatherVal'>" + data.query.results.current.weather.value + "</span>" +
 		"</div>";
