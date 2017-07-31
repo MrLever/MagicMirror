@@ -4,7 +4,7 @@ clock();
 function clock(){
 	if(SETTINGS.DEBUG == 1)
 		console.log("Tick");
-	var loc = "BC";
+	var loc = SETTINGS.clock.loc;
     var today = new Date();
     /* Time */
 	var h = today.getHours();
@@ -14,7 +14,7 @@ function clock(){
 	var day = resolveDay(d);
 
 	var date = today.getDate();
-	var suffix = resolveDate();
+	var suffix = resolveDate(date);
 	var month = today.getMonth();
 	var mnth = resolveMonth(month);
 	var y = today.getFullYear();
@@ -60,12 +60,15 @@ function resolveDate(i){
 		case(21):
 		case(31):
 			return "st";
+			break;
 		case(2):
 		case(22):
 			return "nd";
+			break;
 		case(3):
 		case(23):
 			return "rd";
+			break;
 		default:
 			return "th";
 	}
