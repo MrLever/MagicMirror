@@ -19,13 +19,13 @@ function keys(){
 	jQuery.get('/keys/calendar.key',function(key){
 		apiKey=key;
 		console.log(key);
+		jQuery.get('keys/calendar.id',function(id){
+			id = id.replace(/[\n\r]/g, '');
+			clientId=id;
+			init();
+		});
+	});
 
-	});
-	jQuery.get('keys/calendar.id',function(id){
-		id = id.replace(/[\n\r]/g, '');
-		clientId=id
-	});
-	init();
 }
 
 //calculate period of day
