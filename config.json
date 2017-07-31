@@ -17,8 +17,8 @@
 	},
 	"clock":{
 		"loc":"BC",
-		"military":0,
-		"tpye":0		
+		"military":1,
+		"type":0		
 	},
 	"DEBUG":"1"
 }
