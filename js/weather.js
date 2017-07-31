@@ -48,6 +48,7 @@ function weather(data){
 			"<span class='weatherVal'>" + data.query.results.current.weather.value + "</span>" +
 		"</div>";
 	}
+	setTimeout(initWeather, 3.6e6);
 }
 function fetchImage(imgCode, weatherID){
 	var url;
