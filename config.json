@@ -1,11 +1,18 @@
 {
-	"modules":["clock", "onion", "weather"],
+	"modules":["clock", "onion", "weather","calendar"],
 	"weather":{
 		"cityID":"4167348",
 		"units":"imperial",
 		"icons":1,
 		"mode":0,
 		"scroll":0
+	},
+	"calendar":{
+		"loc":"BL",
+		"timeZone":"New_York",
+		"email":"",
+		"military":0,
+		"name":"Primary"
 	},
 	"DEBUG":"1"
 }
