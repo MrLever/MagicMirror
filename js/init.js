@@ -6,6 +6,14 @@ function initialload(){
 	request.send(null)
 	window.SETTINGS = JSON.parse(request.responseText);
 	for(i = 0;i < SETTINGS.modules.length;i++){
+		/* Add CSS */
+		var link = document.createElement('link');
+		link.setAttribute('rel', 'stylesheet');
+		link.type = 'text/css';
+		link.href = '/css/' + window.SETTINGS.modules[i] + '.css';
+		document.head.appendChild(link);
+		
+		/* Add JS */
 		var imported = document.createElement('script');
 		imported.src = '/js/'.concat(window.SETTINGS.modules[i]).concat('.js');
 		imported.onload = function () {

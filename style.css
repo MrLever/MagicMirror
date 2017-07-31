@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,7 +46,6 @@ table {
 	border-spacing: 0;
 }
 /* END RESET */
-
 @font-face {
   font-family: 'Steelfish';
   src: url('fonts/steelfish_rg.ttf')  format('truetype');
@@ -102,106 +100,7 @@ table {
 	left: 0;
 }
 .right{
-	
 	width: 500px;
 	height: 400px;
 	right: 0;
 }
-
-/* BEGIN CLOCK STYLE RULES */
-.clock{
-	/* background: red; */
-	font-family: "Steelfish", sans-serif;
-}
-.time{
-	z-index: 0;
-	display: block;
-	/* width: 50%; */
-	margin: auto;
-	font-size: 150pt;
-	text-align: center;
-}
-.day{
-	z-index:1;
-	display: block;
-	position: relative;
-	top: -65px;
-	font-family: Velocette;
-	font-size: 125pt;
-	color: #CF112B;
-	text-align: center;
-}
-.date{
-	z-index: 2;
-	height: 0;
-	display: block;
-	position: relative;
-	top: -110px;
-	font-size: 75pt;
-	text-align: center;
-	text-transform: uppercase;
-}
-/* END CLOCK STYLE RULES */
-
-/* BEGIN WEATHER STYLE RULES */
-.weatherWrapper{
-	
-}
-.weatherIco{
-	font-family: MeteoconsRegular;
-	font-size: 63pt;
-	text-align: center;
-}
-.city{
-	position: absolute;
-	top: 0;
-	right: 0;
-	font-size: 72pt;
-	font-family: Velocette;
-	color: #CF112B;
-}
-.temp{
-	font-family: "Steelfish", sans-serif;
-	font-size: 63pt;
-	position: absolute;
-	right: 0px;
-	top: 50pt;
-}
-.weatherVal{
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 115pt;
-	font-size: 36pt;
-	font-family: "Steelfish", sans-serif;
-	text-transform: capitalize;
-}
-.weatherSys{
-	
-}
-/* END WEATHER STYLE RULES */
-
-/* BEGIN FEED STYLE RULES */
-.rssWrapper{
-	
-}
-.rssFeed{
-
-
-}
-.rssTitle{
-	display: block;
-	padding-bottom: 2px;
-	margin-bottom: 5px;
-	font-family: "Steelfish", sans-serif;
-	font-size: 32pt;
-	color: #CF112B;
-	border-bottom: 2px solid #333333;
-}
-.rssAbstract{
-	display: block;
-	width: 100%;
-	font-size: 14pt;
-	text-align: justify;
-}
-/* END FEED STYLE RULES */

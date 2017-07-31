@@ -1,0 +1,34 @@
+/* BEGIN CLOCK STYLE RULES */
+.clock{
+	/* background: red; */
+	font-family: "Steelfish", sans-serif;
+}
+.time{
+	z-index: 0;
+	display: block;
+	/* width: 50%; */
+	margin: auto;
+	font-size: 150pt;
+	text-align: center;
+}
+.day{
+	z-index:1;
+	display: block;
+	position: relative;
+	top: -65px;
+	font-family: Velocette;
+	font-size: 125pt;
+	color: #CF112B;
+	text-align: center;
+}
+.date{
+	z-index: 2;
+	height: 0;
+	display: block;
+	position: relative;
+	top: -110px;
+	font-size: 75pt;
+	text-align: center;
+	text-transform: uppercase;
+}
+/* END CLOCK STYLE RULES */
