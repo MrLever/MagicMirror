@@ -48,7 +48,7 @@ function onion(data){
 		}
 
 		feed = feed + ("<div class='list'>" +
-							"<span class='rssTitle'>" + $(feedTitles[i]).text() + "</span>" +
+							"<span class='subTitle rssTitle'>" + $(feedTitles[i]).text() + "</span>" +
 							"<span class='rssAbstract'>" + $(feedAbstracts[i]).text().trunc(512, true).replace(']]>', '') + "</span>"+
 						"</div>");
 	}
