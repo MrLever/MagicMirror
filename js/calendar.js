@@ -1,5 +1,3 @@
-jQuery.ajaxSetup({async:false});//precaution
-
 console.log("CALENDAR")
 var loc=SETTINGS.calendar.loc;//location on screen
 var clientId;//from google console
