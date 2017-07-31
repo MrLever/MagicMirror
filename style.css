@@ -56,17 +56,32 @@ table {
   font-family: 'Ombres';
   src: url('fonts/la_Compagnie_des_Ombres.ttf')  format('truetype');
 }
-
+@font-face {
+  font-family: 'Velocette';
+  src: url('fonts/Velocette.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'MeteoconsRegular';
+    src: url('fonts/weather.eot');
+    src: url('fonts/weather.eot?#iefix') format('embedded-opentype'),
+         url('fonts/weather.woff') format('woff'),
+         url('fonts/weather.ttf') format('truetype'),
+         url('fonts/weather.svg#MeteoconsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 .content{
 	position: relative;
 	color: #FFF;
 	background: #000;
 	width: 100%;
 	height: 100%;
+	
 }
 .container{
 	position: absolute;
 	display: block;
+	margin: 20px;
 }
 .bottom{
 	bottom: 0;
@@ -81,11 +96,13 @@ table {
 	margin-left: -375px; /*Half of width of bottom container to remain centered.*/
 }
 .left{
+	
 	width: 500px;
 	height: 400px;
 	left: 0;
 }
 .right{
+	
 	width: 500px;
 	height: 400px;
 	right: 0;
@@ -109,25 +126,64 @@ table {
 	display: block;
 	position: relative;
 	top: -65px;
-	font-family: Ombres;
+	font-family: Velocette;
 	font-size: 125pt;
 	color: #CF112B;
 	text-align: center;
 }
 .date{
-	z-index: 0;
+	z-index: 2;
 	height: 0;
 	display: block;
 	position: relative;
-	top: -120px;
+	top: -110px;
 	font-size: 75pt;
 	text-align: center;
+	text-transform: uppercase;
 }
 /* END CLOCK STYLE RULES */
 
+/* BEGIN WEATHER STYLE RULES */
+.weatherWrapper{
+	
+}
+.weatherIco{
+	font-family: MeteoconsRegular;
+	font-size: 42pt;
+	text-align: center;
+}
+.city{
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 48pt;
+	font-family: Velocette;
+	color: #CF112B;
+}
+.temp{
+	font-family: "Steelfish", sans-serif;
+	font-size: 42pt;
+	position: absolute;
+	right: 0px;
+	top: 50pt;
+}
+.weatherVal{
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 98pt;
+	font-size: 24pt;
+	font-family: "Steelfish", sans-serif;
+	text-transform: uppercase;
+}
+.weatherSys{
+	
+}
+/* END WEATHER STYLE RULES */
+
 /* BEGIN FEED STYLE RULES */
 .rssWrapper{
-	margin: 20px;
+	
 }
 .rssFeed{
 
@@ -138,7 +194,7 @@ table {
 	padding-bottom: 2px;
 	margin-bottom: 5px;
 	font-family: "Steelfish", sans-serif;
-	font-size: 22pt;
+	font-size: 32pt;
 	color: #CF112B;
 	border-bottom: 2px solid #333333;
 }

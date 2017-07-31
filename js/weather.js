@@ -1,3 +1,6 @@
+/* Credit to Alessio Atzeni for weather icons: 
+	http://www.alessioatzeni.com/meteocons/
+*/
 initWeather()
 //api.openweathermap.org/data/2.5/weather?id=2172797
 function initWeather(){
@@ -23,10 +26,11 @@ function initWeather(){
 }
 function weather(data){
 	var loc = "TR";
+	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC"
 	if(SETTINGS.DEBUG == 1)
 		console.log(JSON.stringify(data));
 	/* Make a switch for various weather layouts selected by config mode setting. */
-
+	
 	switch(SETTINGS.weather.mode){
 		case 0:
 		default:
@@ -34,80 +38,80 @@ function weather(data){
 		document.getElementById(loc).innerHTML =
 		"<div class='weatherWrappper'>" +
 			"<span class='city'>" +
-
 				data.query.results.current.city.name +
-				"</span>" +
-				"<span class='temp'>" +
-				data.query.results.current.temperature.value + "&deg;" +
-
 			"</span>" +
-			"<span class='weatherIco'><img src='" + fetchImage(data.query.results.current.weather.icon) + "'/>";
-
+			 
+			"<div class='tempLine'><span class='temp'>" +
+				"<span class='weatherIco'>" + fetchImage(data.query.results.current.weather.icon) + " </span>" +
+				data.query.results.current.temperature.value + "<span class='weatherSys'>" + system + "</span>" +
+			"</div>" +	
+			"<span class='weatherVal'>" + data.query.results.current.weather.value + "</span>" +
+		"</div>";
 	}
 }
 function fetchImage(imgCode, weatherID){
 	var url;
 	switch(imgCode){
 		case "01d":
-			url = "images/weather/01d.png";
+			url = "B";
 			break;
 		case "01n":
-			url = "images/weather/01n.png";
+			url = "2";
 			break;
 		case "02d":
-			url = "images/weather/02d.png";
+			url = "H";
 			break;
 		case "02n":
-			url = "images/weather/02n.png";
+			url = "4";
 			break;
 		case "03d":
-			url = "images/weather/03d.png";
+			url = "N";
 			break;
 		case "03n":
-			url = "images/weather/03n.png";
+			url = "5";
 			break;
 		case "04d":
-			url = "images/weather/04d.png";
+			url = "Y";
 			break;
 		case "04n":
-			url = "images/weather/04n.png";
+			url = "%";
 			break;
 		case "09d":
-			url = "images/weather/09d.png";
+			url = "R";
 			break;
 		case "09n":
-			url = "images/weather/09n.png";
+			url = "8";
 			break;
 		case "10d":
-			url = "images/weather/10d.png";
+			url = "Q";
 			break;
 		case "10n":
-			url = "images/weather/10n.png";
+			url = "7";
 			break;
 		case "11d":
-			url = "images/weather/11d.png";
+			url = "Z";
 			break;
 		case "11n":
-			url = "images/weather/11n.png";
+			url = "6";
 			break;
 		case "13d":
-			url = "images/weather/13d.png";
+			url = "W";
 			break;
 		case "13n":
-			url = "images/weather/13n.png";
+			url = "#";
 			break;
 		case "50d":
-			url = "images/weather/50d.png";
+			url = "L";
 			break;
 		case "50n":
-			url = "images/weather/50n.png";
+			url = "L";
 			break;
 		default:
-			url = "images/weather/01d.png";
+			url = ")";
 			console.log("--- ERR: WEATHER ICO NOT FOUND. ---");
 			break;
 	}
-	/* Override for severe weather */
+	/* Override for severe weather
 	switch(weatherID){
 		case (900):
 			url = "images/weather/900.png";
@@ -123,6 +127,6 @@ function fetchImage(imgCode, weatherID){
 			break;
 		default:
 			break;
-	}
+	} */
 	return url;
 }
