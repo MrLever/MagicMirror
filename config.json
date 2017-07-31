@@ -1,6 +1,7 @@
 {
 	"modules":["clock", "onion", "weather","calendar"],
 	"weather":{
+		"loc":"TR",
 		"cityID":"4167348",
 		"units":"imperial",
 		"icons":1,
@@ -13,6 +14,11 @@
 		"email":"",
 		"military":0,
 		"name":"Primary"
+	},
+	"clock":{
+		"loc":"BC",
+		"military":0,
+		"tpye":0		
 	},
 	"DEBUG":"1"
 }

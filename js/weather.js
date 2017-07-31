@@ -25,7 +25,7 @@ function initWeather(){
 	});
 }
 function weather(data){
-	var loc = "TR";
+	var loc = SETTINGS.weather.loc;
 	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC"
 	if(SETTINGS.DEBUG == 1)
 		console.log(JSON.stringify(data));

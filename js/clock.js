@@ -91,11 +91,18 @@ function resolveDay(i){
 	return "ERR";
 }
 function checkHours(i){
-	if(i == 0){ //12AM instead of 0AM
-		i = 12;
-	} else if (i > 10){ // add zero in front of numbers < 10
-		i = i % 12
+	if(SETTINGS.clock.military == 0){
+		if(i == 0) //12AM instead of 0AM
+			i = 12;
+		if(i > 12)
+			i = i % 12;
 	}
+	else{	
+	 	if (i < 10) {
+			i = "0" + i
+		}
+	}		
+	
     return i;
 }
 function checkTime(i) {
