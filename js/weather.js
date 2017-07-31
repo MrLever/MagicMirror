@@ -37,15 +37,15 @@ function weather(data){
 		/* Minimal MODE: 0*/
 		document.getElementById(loc).innerHTML =
 		"<div class='weatherWrappper'>" +
-			"<span class='city'>" +
+			"<span class='title city'>" +
 				data.query.results.current.city.name +
 			"</span>" +
 			 
-			"<div class='tempLine'><span class='temp'>" +
+			"<div class='subTitle tempLine'><span class='temp'>" +
 				"<span class='weatherIco'>" + fetchImage(data.query.results.current.weather.icon) + " </span>" +
 				Math.round(data.query.results.current.temperature.value) + "<span class='weatherSys'>" + system + "</span>" +
 			"</div>" +	
-			"<span class='weatherVal'>" + data.query.results.current.weather.value + "</span>" +
+			"<span class='subtitle weatherVal'>" + data.query.results.current.weather.value + "</span>" +
 		"</div>";
 	}
 	setTimeout(initWeather, 3.6e6);

@@ -22,7 +22,7 @@ function clock(){
 	h = checkHours(h);
 	m = checkTime(m);
     document.getElementById(loc).innerHTML =
-    "<div class='clock'> <span class='time'>" + h + ":" + m + "</span> <span class='day'>" + day + "&#0247</span> <span class='date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
+    "<div class='clock'> <span class='subTitle time'>" + h + ":" + m + "</span> <span class='title day'>" + day + "&#0247</span> <span class='subTitle date'>" + date + " " + suffix + " " + mnth + " " + y + "</span></div>";
     var t = setTimeout(clock, 1000);
 }
 function resolveMonth(i){

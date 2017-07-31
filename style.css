@@ -68,6 +68,12 @@ table {
     font-weight: normal;
     font-style: normal;
 }
+.title{
+	font-family: Velocette;
+}
+.subTitle{
+	font-family: "Steelfish", sans-serif;
+}
 .content{
 	position: relative;
 	color: #FFF;
@@ -79,7 +85,7 @@ table {
 .container{
 	position: absolute;
 	display: block;
-	margin: 20px;
+	margin: 50px;
 }
 .bottom{
 	bottom: 0;

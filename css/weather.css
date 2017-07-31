@@ -12,11 +12,9 @@
 	top: 0;
 	right: 0;
 	font-size: 72pt;
-	font-family: Velocette;
 	color: #CF112B;
 }
 .temp{
-	font-family: "Steelfish", sans-serif;
 	font-size: 63pt;
 	position: absolute;
 	right: 0px;
@@ -28,7 +26,6 @@
 	right: 0;
 	top: 115pt;
 	font-size: 36pt;
-	font-family: "Steelfish", sans-serif;
 	text-transform: capitalize;
 }
 .weatherSys{
