@@ -149,20 +149,20 @@ table {
 }
 .weatherIco{
 	font-family: MeteoconsRegular;
-	font-size: 42pt;
+	font-size: 63pt;
 	text-align: center;
 }
 .city{
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 48pt;
+	font-size: 72pt;
 	font-family: Velocette;
 	color: #CF112B;
 }
 .temp{
 	font-family: "Steelfish", sans-serif;
-	font-size: 42pt;
+	font-size: 63pt;
 	position: absolute;
 	right: 0px;
 	top: 50pt;
@@ -171,10 +171,10 @@ table {
 	display: block;
 	position: absolute;
 	right: 0;
-	top: 98pt;
-	font-size: 24pt;
+	top: 115pt;
+	font-size: 36pt;
 	font-family: "Steelfish", sans-serif;
-	text-transform: uppercase;
+	text-transform: capitalize;
 }
 .weatherSys{
 	
