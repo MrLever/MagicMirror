@@ -38,7 +38,7 @@ function onion(data){
 	document.getElementById(loc).innerHTML = "<div class='rssWrapper'> <div class='rssFeed'>";
 	var feed = ("<div class='innerWrap'>" +
 					"<div class='list'>" +
-						"<span class='rssTitle'>The Onion</span>" +
+						"<span class='subTitle rssTitle'>The Onion</span>" +
 						"<span class='rssAbstract'>America's Finest News Source</span>" +
 					"</div>");
 
