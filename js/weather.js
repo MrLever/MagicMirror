@@ -1,48 +1,60 @@
 /* Credit to Alessio Atzeni for weather icons:
 	http://www.alessioatzeni.com/meteocons/
 */
+var weatherKey;
 initWeather()
 //api.openweathermap.org/data/2.5/weather?id=2172797
 function initWeather(){
+	
 	if(SETTINGS.DEBUG == 1)
 		console.log("--- BEGIN WEATHER MODULE ---");
 
 	jQuery.get('/keys/weather.key', function(key){
-		$.getJSON("/config.json", function(config) {
+			weatherKey = key;
+			
 			if(SETTINGS.DEBUG == 1){
 				console.log('Calling Weather API...');
 				console.log("City ID: " + SETTINGS.weather.cityID);
 				console.log("Units: " + SETTINGS.weather.units);
 				console.log("Final call: " + "http://api.openweathermap.org/data/2.5/weather?id=" +
-					SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units + "&mode=json&appid=" + key)
+					SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units + "&mode=json&appid=" + weatherKey)
 			}
-			/* Leave mode as XML even when request in json? */
+
 			fetchFeed("http://api.openweathermap.org/data/2.5/weather?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
-				"&mode=xml&appid=" + key, "json", weather);
+				"&mode=xml&appid=" + weatherKey, "json", weather);
 			if(SETTINGS.DEBUG == 1)
 				console.log("- End Weather Init -");
 			/* fetchFeed("http://api.openweathermap.org/data/2.5/weather?q=Dunedin,us&units=imperial&mode=xml&appid="+key,"json",weatherprocess); */
-		});
 	});
 }
 function weather(data){
-	var loc = SETTINGS.weather.loc;
-	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC"
+	
 	if(SETTINGS.DEBUG == 1)
 		console.log(JSON.stringify(data));
 	/* Make a switch for various weather layouts selected by config mode setting. */
 
 	switch(SETTINGS.weather.mode){
 		case 1: //Current and forecast
-
+			//$('#' + loc).append(currentWeather(data, system));
+			currentWeather(data);
+			fetchForecast(data);
 			break;
 		case 2: //forecast only
+			fetchForecast(data);
 			break;
 		case 0: //Only current
 		default:
-		/* Minimal MODE: 0*/
-		document.getElementById(loc).innerHTML =
-		"<div class='weatherWrappper'>" +
+			currentWeather(data);
+		//document.getElementById(loc).append(
+		
+	}
+	setTimeout(initWeather, 3.6e6);
+}
+function currentWeather(data){
+	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC";
+	
+	var content =
+		"<div class='currentWeatherWrappper'>" +
 			"<span class='title city'>" +
 				data.query.results.current.city.name +
 			"</span>" +
@@ -53,11 +65,19 @@ function weather(data){
 			"</div>" +
 			"<span class='subtitle weatherVal'>" + data.query.results.current.weather.value + "</span>" +
 		"</div>";
-	}
-	setTimeout(initWeather, 3.6e6);
+	$('#' + SETTINGS.weather.loc).append(content);
+}
+function fetchForecast(){
+	fetchFeed("http://api.openweathermap.org/data/2.5/forecast?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
+				"&mode=xml&appid=" + weatherKey, "json", forecast);
 }
 function forecast(data){
-	return;
+	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC";
+	var content =
+		"<div class='weatherForecastWrappper'>" +
+			"5DAY" + 
+		"</div>";
+	$('#' + SETTINGS.weather.loc).append(content);
 }
 function fetchImage(imgCode, weatherID){
 	var url;
