@@ -19,5 +19,11 @@ function init(key){
 }
 
 function steam(data){
-
+	var div = document.createElement("div")
+	var people = data.query.results.response.players.player
+	for( var i = 0; i < people.length; i++){
+		div.innerHTML+="<span class='person'>"+"<img class='profile' src="+people[i].avatarmedium+">"
+		div.innerHTML+="<span class='name'>" + people[i].personaname+"</span></span><br>"
+		document.getElementById("BR").appendChild(div)
+	}
 }
