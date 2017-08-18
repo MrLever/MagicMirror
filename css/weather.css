@@ -36,5 +36,8 @@
 }
 
 /* 5 DAY WEATHER CSS */
-
+.foreDay{
+	display: inline-block;
+	
+}
 /* END WEATHER STYLE RULES */

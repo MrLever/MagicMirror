@@ -36,8 +36,8 @@ function weather(data){
 	switch(SETTINGS.weather.mode){
 		case 1: //Current and forecast
 			//$('#' + loc).append(currentWeather(data, system));
-			currentWeather(data);
 			fetchForecast(data);
+			currentWeather(data);
 			break;
 		case 2: //forecast only
 			fetchForecast(data);
@@ -68,14 +68,41 @@ function currentWeather(data){
 	$('#' + SETTINGS.weather.loc).append(content);
 }
 function fetchForecast(){
-	fetchFeed("http://api.openweathermap.org/data/2.5/forecast?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
+	if(SETTINGS.DEBUG == 1)
+		console.log("http://api.openweathermap.org/data/2.5/forecast/daily?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
+				"&mode=xml&appid=" + weatherKey);
+	fetchFeed("http://api.openweathermap.org/data/2.5/forecast/daily?id=" + SETTINGS.weather.cityID + "&units=" + SETTINGS.weather.units +
 				"&mode=xml&appid=" + weatherKey, "json", forecast);
 }
+function resolveDay(i){
+	switch(i){
+		case(0):
+			return "Sunday";
+		case(1):
+			return "Monday";
+		case(2):
+			return "Tuesday";
+		case(3):
+			return "Wednesday";
+		case(4):
+			return "Thursday";
+		case(5):
+			return "Friday";
+		case(6):
+			return "Saturday";
+	}
+	return "ERR";
+}
 function forecast(data){
+	if(SETTINGS.DEBUG == 1)
+		console.log(JSON.stringify(data)); 
+	
 	var system = (SETTINGS.weather.units == "imperial")?" &degF":" &degC";
 	var content =
 		"<div class='weatherForecastWrappper'>" +
-			"5DAY" + 
+			"<div class='foreDay'>" +
+				
+			"</div>" +
 		"</div>";
 	$('#' + SETTINGS.weather.loc).append(content);
 }
