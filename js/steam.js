@@ -1,10 +1,23 @@
 function keys(){
 	console.log('fetch begin')
 	jQuery.get('/keys/steam.key',function(key){
-		init()
+		init(key)
 	})
 }
 
-function init(){
-	var content = fetchFeed("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=B9771134FA12F381A86A68CE306EDD35&steamids=76561197960435530","json",steam);
+function init(key){
+	key = key.replace(/[\n\r]/g,"")//acts weird without
+	var ids
+
+	for(var i = 0; i < SETTINGS.steam.ids.length;i++){
+		console.log(SETTINGS.steam.ids[i])
+		ids += SETTINGS.steam.ids[i] + ","
+	}
+
+	var content = fetchFeed("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key="+key+"&steamids="+ids+"&format=xml","json",steam);
+
+}
+
+function steam(data){
+
 }
