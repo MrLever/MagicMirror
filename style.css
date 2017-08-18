@@ -59,6 +59,19 @@ table {
   src: url('fonts/Velocette.ttf')  format('truetype');
 }
 @font-face {
+  font-family: 'Caviar';
+  src: url('fonts/CaviarDreams.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'CaviarBold';
+  src: url('fonts/CaviarDreams_Bold.ttf')  format('truetype');
+}
+@font-face {
+  font-family: 'Parisian';
+  src: url('fonts/Parisian.ttf')  format('truetype');
+}
+
+@font-face {
     font-family: 'MeteoconsRegular';
     src: url('fonts/weather.eot');
     src: url('fonts/weather.eot?#iefix') format('embedded-opentype'),
@@ -69,7 +82,7 @@ table {
     font-style: normal;
 }
 .title{
-	font-family: Velocette;
+	font-family: "Parisian", sans-serif;
 }
 .subTitle{
 	font-family: "Steelfish", sans-serif;

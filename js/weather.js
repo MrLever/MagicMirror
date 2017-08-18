@@ -1,4 +1,4 @@
-/* Credit to Alessio Atzeni for weather icons: 
+/* Credit to Alessio Atzeni for weather icons:
 	http://www.alessioatzeni.com/meteocons/
 */
 initWeather()
@@ -6,6 +6,7 @@ initWeather()
 function initWeather(){
 	if(SETTINGS.DEBUG == 1)
 		console.log("--- BEGIN WEATHER MODULE ---");
+
 	jQuery.get('/keys/weather.key', function(key){
 		$.getJSON("/config.json", function(config) {
 			if(SETTINGS.DEBUG == 1){
@@ -30,9 +31,14 @@ function weather(data){
 	if(SETTINGS.DEBUG == 1)
 		console.log(JSON.stringify(data));
 	/* Make a switch for various weather layouts selected by config mode setting. */
-	
+
 	switch(SETTINGS.weather.mode){
-		case 0:
+		case 1: //Current and forecast
+
+			break;
+		case 2: //forecast only
+			break;
+		case 0: //Only current
 		default:
 		/* Minimal MODE: 0*/
 		document.getElementById(loc).innerHTML =
@@ -40,15 +46,18 @@ function weather(data){
 			"<span class='title city'>" +
 				data.query.results.current.city.name +
 			"</span>" +
-			 
-			"<div class='subTitle tempLine'><span class='temp'>" +
-				"<span class='weatherIco'>" + fetchImage(data.query.results.current.weather.icon) + " </span>" +
-				Math.round(data.query.results.current.temperature.value) + "<span class='weatherSys'>" + system + "</span>" +
-			"</div>" +	
+
+			"<div class='subTitle tempLine'>" +
+			"<span class='temp'> <span class='weatherIco'>" + fetchImage(data.query.results.current.weather.icon) + "</span>" +
+				Math.round(data.query.results.current.temperature.value) + "<span class='weatherSys'>" + system + "</span></span>" +
+			"</div>" +
 			"<span class='subtitle weatherVal'>" + data.query.results.current.weather.value + "</span>" +
 		"</div>";
 	}
 	setTimeout(initWeather, 3.6e6);
+}
+function forecast(data){
+	return;
 }
 function fetchImage(imgCode, weatherID){
 	var url;

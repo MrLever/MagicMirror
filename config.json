@@ -1,8 +1,8 @@
 {
-	"modules":["clock", "onion", "weather","calendar"],
+	"modules":["clock", "onion", "weather"],
 	"weather":{
 		"loc":"TR",
-		"cityID":"4167348",
+		"cityID":"4167147",
 		"units":"imperial",
 		"icons":1,
 		"mode":0,

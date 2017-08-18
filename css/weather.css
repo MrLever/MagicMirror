@@ -2,33 +2,39 @@
 .weatherWrapper{
 	
 }
+/* CURRENT WEATHER CSS */
 .weatherIco{
 	font-family: MeteoconsRegular;
 	font-size: 63pt;
-	text-align: center;
 }
 .city{
+	width: 75%;
+	text-align: right;
 	position: absolute;
 	top: 0;
 	right: 0;
 	font-size: 72pt;
 	color: #CF112B;
+	border-bottom: 2px solid #333333;
 }
 .temp{
 	font-size: 63pt;
 	position: absolute;
 	right: 0px;
-	top: 50pt;
+	top: 75pt;
 }
 .weatherVal{
 	display: block;
 	position: absolute;
 	right: 0;
-	top: 115pt;
+	top: 140pt;
 	font-size: 36pt;
 	text-transform: capitalize;
 }
 .weatherSys{
 	
 }
+
+/* 5 DAY WEATHER CSS */
+
 /* END WEATHER STYLE RULES */
