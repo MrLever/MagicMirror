@@ -15,7 +15,6 @@ function initOnion(){
 	var content = fetchFeed("http://www.theonion.com/feeds/rss","xml",onion);
 }
 function onion(data){
-	var loc = "TL";
 	content = data.results[0];
 	//console.log(content);
 
@@ -35,7 +34,7 @@ function onion(data){
 	}
 
 	//Process feed. If the abstract is just a picture, skip it.
-	document.getElementById(loc).innerHTML = "<div class='rssWrapper'> <div class='rssFeed'>";
+	document.getElementById(SETTINGS.steam.loc).innerHTML = "<div class='rssWrapper'> <div class='rssFeed'>";
 	var feed = ("<div class='innerWrap'>" +
 					"<div class='list'>" +
 						"<span class='subTitle rssTitle'>The Onion</span>" +

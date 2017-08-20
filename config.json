@@ -1,5 +1,5 @@
 {
-	"modules":["clock", "onion", "weather","steam"],
+	"modules":["clock","onion","weather","steam"],
 	"weather":{
 		"loc":"TR",
 		"cityID":"4167147",
@@ -8,6 +8,9 @@
 		"mode":1,
 		"days":5,
 		"scroll":0
+	},
+	"onion":{
+		"loc":"TL"
 	},
 	"calendar":{
 		"loc":"BL",
