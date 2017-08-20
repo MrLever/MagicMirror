@@ -82,7 +82,7 @@ table {
     font-style: normal;
 }
 .title{
-	font-family: "Parisian", sans-serif;
+	font-family: "ombres", sans-serif;
 }
 .subTitle{
 	font-family: "Steelfish", sans-serif;
@@ -106,12 +106,20 @@ table {
 .top{
 	top: 0;
 }
+.middle{
+	position: absolute;
+    top:0;
+    bottom: 0;
+	padding: 50px;
+    margin: auto;
+}
 .center{
 	width: 750px;
 	height: 400px;
 	left: 50%;
 	margin-left: -375px; /*Half of width of bottom container to remain centered.*/
 }
+
 .left{
 	width: 500px;
 	height: 400px;

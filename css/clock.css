@@ -1,6 +1,7 @@
 /* BEGIN CLOCK STYLE RULES */
 .clock{
 	/* background: red; */
+	top: 20px;
 }
 .time{
 	z-index: 0;
@@ -15,7 +16,7 @@
 	display: block;
 	position: relative;
 	top: -75px;
-	font-size: 125pt;
+	font-size: 145pt;
 	color: #CF112B;
 	text-align: center;
 	
@@ -25,7 +26,7 @@
 	height: 0;
 	display: block;
 	position: relative;
-	top: -100px;
+	top: -145px;
 	font-size: 75pt;
 	text-align: center;
 }

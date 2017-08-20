@@ -38,7 +38,7 @@ function weather(data){
 		console.log(JSON.stringify(data));
 	
 	$('#' + SETTINGS.weather.loc).append("<div class='currentWeatherWrappper'>" +
-			"<span class='title city'>" +
+			"<span class='subTitle city'>" +
 				data.query.results.current.city.name +
 			"</span>");
 
