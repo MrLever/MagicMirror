@@ -1,5 +1,5 @@
 {
-	"modules":["clock", "onion", "weather"],
+	"modules":["clock", "onion", "weather","calendar","steam"],
 	"weather":{
 		"loc":"TR",
 		"cityID":"4167147",
@@ -18,7 +18,11 @@
 	"clock":{
 		"loc":"BC",
 		"military":1,
-		"type":0		
+		"type":0
+	},
+	"steam":{
+		"loc":"BR",
+		"ids":["76561198045571764","76561198035283397"]
 	},
 	"DEBUG":"1"
 }
