@@ -1,5 +1,5 @@
 /* BEGIN WEATHER STYLE RULES */
-.weatherWrapper{
+.currentweatherWrapper{
 	
 }
 /* CURRENT WEATHER CSS */
@@ -34,7 +34,35 @@
 .weatherSys{
 	
 }
-
 /* 5 DAY WEATHER CSS */
-
+.weatherForecastWrappper{
+	width: 100%;
+	position: absolute;
+	top: 110px;
+	left: 28.75%;
+}
+.foreDay{
+	text-align: center;
+	display: inline-block;
+	width: 15%;
+	height: 100px;	
+}
+.weekDay{
+	font-size: 28pt;
+}
+.forecastIco{
+	display: block;
+	font-family: MeteoconsRegular;
+	font-size: 24pt;
+	padding-top: 5px;
+}
+.forecastTemp{
+	font-size: 28;
+}
+.forecastHigh{
+	margin-right: 10px;
+} 
+.forecastLow{
+	color: #ababab;
+}
 /* END WEATHER STYLE RULES */
