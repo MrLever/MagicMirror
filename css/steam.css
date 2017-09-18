@@ -1,6 +1,15 @@
 .steamWrapper{
 	
 }
+.steamHeader{
+	display: block;
+	width: 75%;
+	font-family: steelfish;
+	font-size: 75pt;
+	color: #Cf112B;
+	border-bottom: 2px solid #333333;
+	margin-bottom: 10px;
+}
 .person{
 	display: block;
 	margin-bottom: 20px;

@@ -36,15 +36,16 @@ function steam(data){
 	var people = data.query.results.response.players.player;
 	var div = document.createElement("div");
 	div.className = "steamWrapper";
-	div.innerHTML=""
+	div.innerHTML="<span class='subTitle steamHeader'> Friends </span><div class='list'>";
 	for( var i = 0; i < people.length; i++){
-		online = "offline"
+		status = "offline"
 		if(people[i].personastate>0){
-			online = "online"
+			status = "online"
 		}
-		div.innerHTML+="<div class='person'>"+"<img class='profile' src="+people[i].avatarmedium+">" + "<span class='"+online+"'>" + people[i].personaname+"</span></div><br>"
+		div.innerHTML+="<div class='person'>"+"<img class='profile' src="+people[i].avatarmedium+">" + "<span class='"+status+"'>" + people[i].personaname+"</span></div><br>"
 		document.getElementById(SETTINGS.steam.loc).appendChild(div)
 	}
+	div.innerHTML+="</div>";
 	if(SETTINGS.DEBUG == 1)
 		console.log('--- END STEAM MODULE ---');
 }

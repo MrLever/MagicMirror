@@ -70,7 +70,6 @@ table {
   font-family: 'Parisian';
   src: url('fonts/Parisian.ttf')  format('truetype');
 }
-
 @font-face {
     font-family: 'MeteoconsRegular';
     src: url('fonts/weather.eot');
