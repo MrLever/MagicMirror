@@ -34,7 +34,7 @@ function onion(data){
 	}
 
 	//Process feed. If the abstract is just a picture, skip it.
-	document.getElementById(SETTINGS.steam.loc).innerHTML = "<div class='rssWrapper'> <div class='rssFeed'>";
+	document.getElementById(SETTINGS.onion.loc).innerHTML = "<div class='rssWrapper'> <div class='rssFeed'>";
 	var feed = ("<div class='innerWrap'>" +
 					"<div class='list'>" +
 						"<span class='subTitle rssTitle'>The Onion</span>" +
