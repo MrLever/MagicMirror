@@ -33,6 +33,7 @@ function steamfetch(key, ids){
 }
 
 function steam(data){
+	document.getElementById(SETTINGS.steam.loc).innerHTML = ""; //reset;
 	var people = data.query.results.response.players.player;
 	var div = document.createElement("div");
 	div.className = "steamWrapper";
