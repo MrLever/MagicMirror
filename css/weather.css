@@ -1,33 +1,42 @@
 /* BEGIN WEATHER STYLE RULES */
-.currentweatherWrapper{
-	
+.weatherTitleLine{
+	width: 100%;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	padding-bottom: 5px;
+	padding-right: 5px;
+	border-bottom: 2px solid #333333;
 }
 /* CURRENT WEATHER CSS */
-.weatherIco{
-	font-family: MeteoconsRegular;
-	font-size: 63pt;
-}
 .city{
 	width: 75%;
 	text-align: right;
-	position: absolute;
+	/* position: absolute;
 	top: 0;
-	right: 0;
+	right: 0;  */
 	font-size: 75pt;
 	color: #CF112B;
-	border-bottom: 2px solid #333333;
+	
 }
 .temp{
 	font-size: 63pt;
-	position: absolute;
+	/* position: absolute;
 	right: 0px;
-	top: 75pt;
+	top: 75pt; */
+}
+.weatherIco{
+	font-family: MeteoconsRegular;
+	display: inline;
+	padding-left: 30px;
+	/* padding-right: 10px; */
+	font-size: 55pt;
 }
 .weatherVal{
 	display: block;
 	position: absolute;
 	right: 0;
-	top: 140pt;
+	top: 80pt; 
 	font-size: 36pt;
 	text-transform: capitalize;
 }
@@ -38,8 +47,8 @@
 .weatherForecastWrappper{
 	width: 100%;
 	position: absolute;
-	top: 110px;
-	left: 28.75%;
+	top: 120px;
+	left: 27%;
 }
 .foreDay{
 	text-align: center;
